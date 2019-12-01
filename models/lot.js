@@ -8,6 +8,7 @@ var lotSchema = new mongoose.Schema({
 		url: String
 	},
 	age: String,
+	price: String,
 	type_items: String,
 	description: String,
 	gender: String,

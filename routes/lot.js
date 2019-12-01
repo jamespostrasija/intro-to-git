@@ -104,6 +104,7 @@ router.post("/", middleware.isLoggedIn, upload.single("imageLocal"), function(re
 	//get data from form and add to lots listing array
 	var name = req.body.name;
 	var age = req.body.age;
+	var price = req.body.price;
 	var type_items = req.body.type_items;
 	var gender = req.body.gender;
 	var postal_code = req.body.postal_code;
@@ -137,7 +138,7 @@ router.post("/", middleware.isLoggedIn, upload.single("imageLocal"), function(re
           url: result.secure_url
         }
         //cloudinary ends
-         Lot.create({name, age, type_items, gender, postal_code, image, description, location, lat, lng, author}, (err, lot) => {
+         Lot.create({name, age, type_items, gender, postal_code, price, image, description, location, lat, lng, author}, (err, lot) => {
           if (err) {
             req.flash("error", "Couldn\'t add Lot Listing.");
           } else {
@@ -233,6 +234,7 @@ router.put("/:id", middleware.checkLotOwnership, upload.single("imageLocal"), fu
     let updateData = {
       name: req.body.name,
       age: req.body.age,
+      price: req.body.price,
       gender: req.body.gender,
       types_items: req.body.types_items,
       postal_code: req.body.postal_code,
