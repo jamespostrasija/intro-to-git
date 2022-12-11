@@ -21,7 +21,7 @@
     "connect-flash": "^0.1.1",
     "del": "^5.1.0",
     "ejs": "^2.6.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-generator": "^4.16.1",
     "express-session": "^1.16.2",
     "gulp": "^4.0.2",
